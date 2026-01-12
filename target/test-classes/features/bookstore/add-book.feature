@@ -5,12 +5,15 @@ Feature: Add Book
     * def token = auth.token
     * def validUserID = auth.userID
     * def requestBody = read('classpath:features/bookstore/bookdata/book-data.json')
+    * def allBooksCatalog = call read('classpath:features/bookstore/list-all-books.feature')
     Given url baseUrl
 
-  @books
+  @addbooks
   Scenario Outline: <paths-scenarios>
     * requestBody.userId = <userID>
     * def schema = read('classpath:features/schemas/<expected-schema-path>')
+    * def firstBookISBN = allBooksCatalog.response.books[0].isbn
+    * requestBody.collectionOfIsbns[0].isbn = firstBookISBN
 
     Given path "/BookStore/v1/Books"
     And header Authorization = 'Bearer ' + token
