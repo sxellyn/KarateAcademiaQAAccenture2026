@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2}];
+var items = [{"id":1,"group":1,"content":"features\/account\/create-user[1.1:19]","start":1768181540726,"end":1768181542987,"title":"features\/account\/create-user[1.1:19] 22:32:20.726-22:32:22.987 Happy Ending - Creating with valid credentials!"},{"id":2,"group":2,"content":"features\/account\/create-user[1.2:20]","start":1768181540726,"end":1768181542443,"title":"features\/account\/create-user[1.2:20] 22:32:20.726-22:32:22.443 Bad Ending - Creating with duplicated credentials!"},{"id":3,"group":2,"content":"features\/account\/delete-user[1.1:22]","start":1768181542448,"end":1768181545891,"title":"features\/account\/delete-user[1.1:22] 22:32:22.448-22:32:25.891 Happy Ending - Deleting with valid token!"},{"id":4,"group":1,"content":"features\/account\/delete-user[1.2:23]","start":1768181542991,"end":1768181546361,"title":"features\/account\/delete-user[1.2:23] 22:32:22.991-22:32:26.361 Bad Ending - Deleting with Invalid token!"},{"id":5,"group":2,"content":"features\/authentication\/get-token[1.1:19]","start":1768181545894,"end":1768181547303,"title":"features\/authentication\/get-token[1.1:19] 22:32:25.894-22:32:27.303 Happy Ending - Token with valid credentials!"},{"id":6,"group":1,"content":"features\/authentication\/get-token[1.2:20]","start":1768181546364,"end":1768181547843,"title":"features\/authentication\/get-token[1.2:20] 22:32:26.364-22:32:27.843 Bad Ending - Token with invalid credentials!"},{"id":7,"group":2,"content":"features\/bookstore\/add-book[1.1:24]","start":1768181547307,"end":1768181551908,"title":"features\/bookstore\/add-book[1.1:24] 22:32:27.307-22:32:31.908 Happy Ending - Creating new book with valid userId!"},{"id":8,"group":1,"content":"features\/bookstore\/add-book[1.2:25]","start":1768181547846,"end":1768181552362,"title":"features\/bookstore\/add-book[1.2:25] 22:32:27.846-22:32:32.362 Bad Ending - Creating new book with invalid userId!"},{"id":9,"group":2,"content":"features\/bookstore\/find-one-book[1.1:21]","start":1768181551911,"end":1768181554834,"title":"features\/bookstore\/find-one-book[1.1:21] 22:32:31.911-22:32:34.834 Happy Ending - Get book by valid ISBN!"},{"id":10,"group":1,"content":"features\/bookstore\/find-one-book[1.2:22]","start":1768181552365,"end":1768181555597,"title":"features\/bookstore\/find-one-book[1.2:22] 22:32:32.365-22:32:35.597 Bad Ending - Get book with invalid ISBN!"},{"id":11,"group":2,"content":"features\/bookstore\/list-all-books[1:10]","start":1768181554836,"end":1768181557853,"title":"features\/bookstore\/list-all-books[1:10] 22:32:34.836-22:32:37.853 List catalog successfully!"},{"id":12,"group":1,"content":"features\/bookstore\/update-ISBN-book[1.1:28]","start":1768181555600,"end":1768181560739,"title":"features\/bookstore\/update-ISBN-book[1.1:28] 22:32:35.600-22:32:40.739 Happy Ending - Update book successfully"},{"id":13,"group":2,"content":"features\/bookstore\/update-ISBN-book[1.2:29]","start":1768181557856,"end":1768181562780,"title":"features\/bookstore\/update-ISBN-book[1.2:29] 22:32:37.856-22:32:42.780 Bad Ending - Update book with invalid ISBN"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

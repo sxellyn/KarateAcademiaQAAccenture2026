@@ -1,9 +1,3 @@
-target/
-!target/karate-reports/
-!target/karate-reports/**
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 .kotlin
 
 ### IntelliJ IDEA ###
