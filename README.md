@@ -46,6 +46,7 @@ target/karate-reports/karate-summary.html
 ```
 
 Open this file in your browser to view detailed test results.
+<img width="1024" height="419" alt="image" src="https://github.com/user-attachments/assets/bdef8189-9587-49db-8236-10bf26854847" />
 
 ## Test Structure
 
