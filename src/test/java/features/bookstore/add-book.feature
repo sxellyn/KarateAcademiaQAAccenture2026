@@ -25,4 +25,4 @@ Feature: Add Book
     Examples:
       | paths-scenarios                                     | userID           | status | expected-schema-path     |
       | Happy Ending - Creating new book with valid userId! | validUserID      | 201    | books/sucess-schema.json |
-      | Bad Ending - Creating new book with invalid userId! | cachorroquente   | 401    | common/error-schema.json |
+      | Bad Ending - Creating new book with invalid userId! | "cachorroquente" | 401    | common/error-schema.json |

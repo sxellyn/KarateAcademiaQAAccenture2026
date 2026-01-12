@@ -8,7 +8,7 @@ Feature: Add Book
     * def allBooksCatalog = call read('classpath:features/bookstore/list-all-books.feature')
     Given url baseUrl
 
-  @addbooks
+  @books
   Scenario Outline: <paths-scenarios>
     * requestBody.userId = <userID>
     * def schema = read('classpath:features/schemas/<expected-schema-path>')
